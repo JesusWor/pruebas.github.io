@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salida</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #ffe5e5;
+      }
+      .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 400px;
+        padding: 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #e2e2e2, #c9c9c9);
+        border-radius: 15px;
+      }
+      .img {
+        max-width: 200px;
+      }
+      .botones {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .btn {
+        font-size: large;
+        padding: 10px 25px;
+        text-decoration: none;
+        color: #111;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.3);
+        position: relative;
+        display: flex;
+      }
+      .btn:hover {
+        background-color: #f2f2f2;
+        cursor: pointer;
+      }
+      #yesBtn {
+        z-index: 10;
+      }
+      #noBtn {
+        z-index: 5;
+        transition: transform 0.2s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div
+        class="tenor-gif-embed"
+        data-postid="10012230355003332465"
+        data-share-method="host"
+        data-aspect-ratio="0.995816"
+        data-width="100%"
+      >
+        <img
+          id="gif"
+          src="https://tenor.com/view/goma-goma-cat-goma-peach-goma-peach-love-peach-and-goma-gif-10012230355003332465"
+          alt="salir"
+          class="img"
+        />
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+      <p id="texto">¿Quieres salir conmigo? 😘</p>
+
+      <div class="botones" id="botons">
+        <button id="yesBtn" class="btn">SI</button>
+        <button id="noBtn" class="btn">NO</button>
+      </div>
+    </div>
+
+    <script>
+      const yesBtn = document.querySelector('#yesBtn')
+      const noBtn = document.querySelector('#noBtn')
+      const texto = document.querySelector('#texto')
+      const gif = document.querySelector('#gif')
+
+      yesBtn.addEventListener('click', function () {
+        gif.src =
+          'https://tenor.com/view/te-amo-alexia-gif-10447284005503087999'
+        texto.innerHTML = '¡Sabía que dirías que sí! ❤️ Te quiero mucho 😍'
+        yesBtn.style.display = 'none'
+        noBtn.style.display = 'none'
+      })
+
+      function moverBoton() {
+        const randomX = Math.random() * 150 - 75
+        const randomY = Math.random() * 150 - 75
+        noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`
+      }
+
+      noBtn.addEventListener('mouseover', moverBoton)
+      noBtn.addEventListener('click', moverBoton)
+      noBtn.addEventListener('touchstart', moverBoton)
+    </script>
+  </body>
+</html>
